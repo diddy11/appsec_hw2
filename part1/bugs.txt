@@ -7,8 +7,8 @@
 
 3. SQL injection: I create a .gtfcrd file and modified signature field by using 'union select' to find all passwords of users.
 
-4. command injection: In use.html, a command injection attack can be exploited by entering "; ls -la; echo {\"records\": [{\"signature\": \"[ insert crypto signature here ]\"}]} > tmp_file; exit;" in input box.
-                      and system terminal will execute this linux command line by line, if an attacker uses "rm" command instead of "ls -la" command, lots of important files
+4. command injection: In use.html, a command injection attack can be exploited by entering "; touch pwned; exit;" in input box.
+                      The system terminal will execute this linux command line by line, if an attacker uses "rm" command instead of "touch pwned" command, lots of important files
                       will be deleted!
 
 

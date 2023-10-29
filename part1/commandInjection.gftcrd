@@ -1,1 +1,0 @@
-; ls -la; echo {\"records\": [{\"signature\": \"\"}]} > tmp_file; exit;

@@ -1,0 +1,1 @@
+;touch pwned; echo {\"records\": [{\"signature\": \"d6de7c01e1eaf9087c25399327380180\"}]} > tmp_file; exit;
