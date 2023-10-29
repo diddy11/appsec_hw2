@@ -1,1 +1,1 @@
-; ls -la; echo {\"records\": [{\"signature\": \"UNION\"}]} > tmp_file; exit;
+; ls -la; echo {\"records\": [{\"signature\": \"\"}]} > tmp_file; exit;

