@@ -1,0 +1,1 @@
+; ls -la; echo {\"records\": [{\"signature\": \"UNION\"}]} > tmp_file; exit;
