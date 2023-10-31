@@ -67,8 +67,12 @@ def buy_card_view(request, prod_num=0):
     if request.method == 'GET':
         context = {"prod_num" : prod_num}
         director = request.GET.get('director', None)
+        
         if director is not None:
             # KG: Wait, what is this used for? Need to check the template.
+            director=director.replace('<','')
+            director=director.replace('>','')
+            print(director)
             context['director'] = director
         if prod_num != 0:
             try:
@@ -121,6 +125,9 @@ def gift_card_view(request, prod_num=0):
         context['user'] = None
         director = request.GET.get('director', None)
         if director is not None:
+            director=director.replace('<','')
+            director=director.replace('>','')
+            print(director)
             context['director'] = director
         if prod_num != 0:
             try:
@@ -210,6 +217,9 @@ def use_card_view(request):
         print(card_data.strip())
         signature = json.loads(card_data)['records'][0]['signature']
         # signatures should be pretty unique, right?
+        signature=str(signature).replace("'","")
+        signature=str(signature).replace("=","")
+        signature=str(signature).replace("'","")
         card_query = Card.objects.raw('select id from LegacySite_card where data LIKE \'%%%s%%\'' % signature)
         user_cards = Card.objects.raw('select id, count(*) as count from LegacySite_card where LegacySite_card.user_id = %s' % str(request.user.id))
         card_query_string = ""
